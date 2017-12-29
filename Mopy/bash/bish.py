@@ -778,7 +778,7 @@ def gmstIds(fileName=None):
     print 'maxId',hex(maxId)
     #--Eid list? - if the GMST has a 00000000 eid when looking at it in the cs with nothing
     # but oblivion.esm loaded you need to add the gmst to this list, rebuild the pickle and overwrite the old one.
-    for eid in bush.game.gmstEids:
+    for eid in bush.game_mod.gmstEids:
         if eid not in fids:
             maxId += 1
             fids[eid] = maxId
@@ -1006,7 +1006,7 @@ def parseRecords(fileName='Oblivion.esm'):
     if skipPrint == True:
         oOut = sys.stdout
         sys.stdout = disablePrint()
-    for typed in bush.game.modFile.topTypes:
+    for typed in bush.game_mod.modFile.topTypes:
         if typed not in loadFactory.recTypes or typed not in modFile.tops: continue
         print typed
         if hasattr(getattr(modFile,typed), 'melSet'): readRecord(getattr(modFile,typed))

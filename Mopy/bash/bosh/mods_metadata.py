@@ -230,7 +230,7 @@ class ConfigHelpers:
                 loot_api.initialise_locale('')
                 loot_game = loot_api.create_game_handle(gameType, bass.dirs['app'].s)
                 lootDb = loot_game.get_database()
-            except OSError:
+            except (OSError, AttributeError):
                 deprint(u'The LOOT API failed to initialize', traceback=True)
                 lootDb = None
             except ValueError:

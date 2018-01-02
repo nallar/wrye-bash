@@ -276,7 +276,6 @@ class ConfigHelpers:
                         lootDb.load_lists(path.s,userpath.s)
                     else:
                         lootDb.load_lists(path.s)
-                    lootDb.eval_lists()
                     return # we are done
                 # unfortunatelly the pyd file throws generic Exception - see
                 # http://pybind11.readthedocs.io/en/latest/advanced/exceptions.html#built-in-exception-translation
@@ -294,7 +293,6 @@ class ConfigHelpers:
         try:
             self.tagCache = {}
             lootDb.load_lists(self.tagList.s)
-            lootDb.eval_lists()
         except Exception:
             deprint(u'An error occurred while parsing taglist.yaml:',
                     traceback=True)

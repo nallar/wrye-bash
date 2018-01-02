@@ -602,7 +602,7 @@ class Installer(object):
         dataDirsMinus = self.dataDirsMinus
         skipExts = self.skipExts
         unSize = 0
-        bethFiles = bush.game.bethDataFiles
+        bethFiles = bush.game_mod.bethDataFiles
         skips, global_skip_ext = self._init_skips()
         if self.overrideSkips:
             renameStrings = False
